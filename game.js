@@ -108,11 +108,11 @@ function drawTrail(path, currentPos) {
     let tire = false
     if (tire == false){return}
     
-    if (isNaN(a) || isNaN(b)|| isNaN(c)){
+    if (!(isNaN(a) || isNaN(b)|| isNaN(c)){
         t=0
         path=[]
         tire = true
-    function genereParabole(){
+    function step(){
         let worldX = randomPositionPlayerX + t
         let worldY = randomPositionPlayerY + (a*t*t + b*t)
         let pos = griToPix(worldX,worldY)
@@ -127,15 +127,15 @@ function drawTrail(path, currentPos) {
         step();
     }
     function isNearEnemy(px, py) {
-    var e = gridToPixel(randomPositionEnemyX, randomPositionEnemyY);
+    var e = gridToPix(randomPositionEnemyX, randomPositionEnemyY);
     var dx = px - e.px;
     var dy = py - e.py;
     return 
     Math.sqrt(dx*dx + dy*dy) < 14; 
 }
 function finishShot(hit, hitPx, hitPy) {
-    isShooting = false
-    if (hit) {
+    tire = false
+    if (isNearEnemy = ) {
         document.getElementById("divAffiche").innerText = "HIT!"
         drawScene()
         ctx.beginPath()
