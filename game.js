@@ -111,7 +111,6 @@ for (let j = 0; j <= griCol; j++) {
     ctx.lineTo(j * celWid, hauteure)
     ctx.stroke()
     }
-
 for (let i = 0; i <= gridRow; i++) {
     ctx.beginPath()
     ctx.moveTo(0, i * celHei)
@@ -129,7 +128,6 @@ ctx.arc(enemy.px, enemy.py, 8, 0, Math.PI * 2)
 ctx.fillStyle = "#e44"
 ctx.fill()
 }
-
 // https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Advanced_animations
 function drawTrail(path, currentPos) {
     if (path.length < 2) return
@@ -146,8 +144,6 @@ ctx.arc(currentPos.px, currentPos.py, 5, 0, Math.PI * 2)
 ctx.fillStyle = "#fff"
 ctx.fill()
 }
-
-
 function isNearEnemy(px, py) {
 var e  = griToPix(enemyX, enemyY)
 var dx = px - e.px
