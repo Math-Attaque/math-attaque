@@ -28,7 +28,12 @@ const canvas = document.getElementById("myCanvas")
 const ctx = canvas.getContext("2d")
 const largeure = canvas.width
 const hauteure = canvas.height
-drawEnemyTank()
+
+    let a = parseFloat(document.getElementById("a").value)
+    let b = parseFloat(document.getElementById("b").value)
+    let c = parseFloat(document.getElementById("c").value)
+
+/*drawEnemyTank()
 drawTank()
 
 function genereParabole() {
@@ -76,6 +81,7 @@ function drawScene(){
         ctx.lineTo(j * celHei, canHei)
         ctx.stroke()
     }
+}
     for (let i = 0; i <= gridRow; i++) {
         ctx.beginPath()
         ctx.moveTo(0, i * celHei)
@@ -102,15 +108,11 @@ function drawTrail(path, currentPos) {
     let tire = false
     if (tire == false){return}
     
-    let a = parseFloat(document.getElementById("a").value)
-    let b = parseFloat(document.getElementById("b").value)
-    let c = parseFloat(document.getElementById("c").value)
-
     if (isNaN(a) || isNaN(b)|| isNaN(c)){
         t=0
         path=[]
         tire = true
-    function step(){
+    function genereParabole(){
         let worldX = randomPositionPlayerX + t
         let worldY = randomPositionPlayerY + (a*t*t + b*t)
         let pos = griToPix(worldX,worldY)
