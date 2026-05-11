@@ -20,20 +20,7 @@ function genereParabole() {
     }
     ctx.stroke()
 }
-*/
-
-
-
-const canvas = document.getElementById("myCanvas")
-const ctx = canvas.getContext("2d")
-const largeure = canvas.width
-const hauteure = canvas.height
-
-    let a = parseFloat(document.getElementById("a").value)
-    let b = parseFloat(document.getElementById("b").value)
-    let c = parseFloat(document.getElementById("c").value)
-
-/*drawEnemyTank()
+drawEnemyTank()
 drawTank()
 
 function genereParabole() {
@@ -62,90 +49,22 @@ function genereParabole() {
         } else if (!(x <= 1)) {
             ctx.lineTo(xDessin, y)
         }
-            */
+            
     }
     ctx.stroke()
-}
+}*/
 //https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Advanced_animations
 //https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
 //https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Transformations
 //https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Transformations
-function drawScene(){
-       ctx.fillStyle = "#000"
-    ctx.fillRect(0, 0, canWid, canHei)
-    ctx.strokeStyle = "rgba(255,255,255,0.1)"
-    ctx.lineWidth = 1
- for (let j = 0; j <= griCol; j++) {
-        ctx.beginPath()
-        ctx.moveTo(j * celWid, 0)
-        ctx.lineTo(j * celHei, canHei)
-        ctx.stroke()
-    }
-}
-    for (let i = 0; i <= gridRow; i++) {
-        ctx.beginPath()
-        ctx.moveTo(0, i * celHei)
-        ctx.lineTo(canWid, i * celHei)
-        ctx.stroke()
-    }
-function drawTrail(path, currentPos) {
-    if (path.length < 2) return
-    ctx.beginPath()
-    ctx.strokeStyle = "rgba(100, 180, 255, 0.9)"
-    ctx.lineWidth = 2
-    ctx.moveTo(path[0].px, path[0].py)
-    for (let i = 1; i < path.length; i++) {
-        ctx.lineTo(path[i].px, path[i].py)
-    }
-        ctx.stroke()
-    ctx.beginPath()
-    ctx.arc(currentPos.px, currentPos.py, 5, 0, Math.PI * 2)
-    ctx.fillStyle = "#fff"
-    ctx.fill()
-}
-    let t = 0
-    let path = []
-    let tire = false
-    if (tire == false){return}
-    
-    if (!(isNaN(a) || isNaN(b)|| isNaN(c)){
-        t=0
-        path=[]
-        tire = true
-    function step(){
-        let worldX = randomPositionPlayerX + t
-        let worldY = randomPositionPlayerY + (a*t*t + b*t)
-        let pos = griToPix(worldX,worldY)
-        path.push(pos)
-        drawScene()
-        drawTrail(path)
-        drawDot(pos)
-        finishShot()
-        t += 0.05;
-        requestAhimationFrame(step);
-        }
-        step();
-    }
-    function isNearEnemy(px, py) {
-    var e = gridToPix(randomPositionEnemyX, randomPositionEnemyY);
-    var dx = px - e.px;
-    var dy = py - e.py;
-    return 
-    Math.sqrt(dx*dx + dy*dy) < 14; 
-}
-function finishShot(hit, hitPx, hitPy) {
-    tire = false
-    if (isNearEnemy = ) {
-        document.getElementById("divAffiche").innerText = "HIT!"
-        drawScene()
-        ctx.beginPath()
-    } else {
-        document.getElementById("divAffiche").innerText = "Miss"
-        drawScene()
-    }
-}
+const canvas = document.getElementById("myCanvas")
+const ctx = canvas.getContext("2d")
+const largeure = canvas.width
+const hauteure = canvas.height
 
-
+    let a = parseFloat(document.getElementById("a").value)
+    let b = parseFloat(document.getElementById("b").value)
+    let c = parseFloat(document.getElementById("c").value)
 
 
 //source : https://www.sitepoint.com/generate-random-numbers-javascript/ 
@@ -197,3 +116,80 @@ imgEnemyTank.onload = function() {
     ctx.drawImage(imgEnemyTank, 500, 30, 150, 150);
 };
 }
+
+function drawScene(){
+       ctx.fillStyle = "#000"
+    ctx.fillRect(0, 0, canWid, canHei)
+    ctx.strokeStyle = "rgba(255,255,255,0.1)"
+    ctx.lineWidth = 1
+ for (let j = 0; j <= griCol; j++) {
+        ctx.beginPath()
+        ctx.moveTo(j * celWid, 0)
+        ctx.lineTo(j * celHei, canHei)
+        ctx.stroke()
+    }
+}
+    for (let i = 0; i <= gridRow; i++) {
+        ctx.beginPath()
+        ctx.moveTo(0, i * celHei)
+        ctx.lineTo(canWid, i * celHei)
+        ctx.stroke()
+    }
+function drawTrail(path, currentPos) {
+    if (path.length < 2) return
+    ctx.beginPath()
+    ctx.strokeStyle = "rgba(100, 180, 255, 0.9)"
+    ctx.lineWidth = 2
+    ctx.moveTo(path[0].px, path[0].py)
+    for (let i = 1; i < path.length; i++) {
+        ctx.lineTo(path[i].px, path[i].py)
+    }
+        ctx.stroke()
+    ctx.beginPath()
+    ctx.arc(currentPos.px, currentPos.py, 5, 0, Math.PI * 2)
+    ctx.fillStyle = "#fff"
+    ctx.fill()
+}
+    let t = 0
+    let path = []
+    let tire = false
+    if (tire == false){return}
+    
+    if (!(isNaN(a) || isNaN(b)|| isNaN(c))){
+        t=0
+        path=[]
+        tire = true
+    function step(){
+        let worldX = randomPositionPlayerX + t
+        let worldY = randomPositionPlayerY + (a*t*t + b*t)
+        let pos = griToPix(worldX,worldY)
+        path.push(pos)
+        drawScene()
+        drawTrail(path)
+        drawDot(pos)
+        finishShot()
+        t += 0.05;
+        requestAnimationFrame(step);
+        }
+        step();
+    }
+    function isNearEnemy(px, py) {
+    var e = gridToPix(randomPositionEnemyX, randomPositionEnemyY);
+    var dx = px - e.px;
+    var dy = py - e.py;
+    return 
+    Math.sqrt(dx*dx + dy*dy) < 14; 
+}
+function finishShot(hit, hitPx, hitPy) {
+    tire = false
+    if (isNearEnemy(pos.px,pos.py)) {
+        document.getElementById("divAffiche").innerText = "HIT!"
+        drawScene()
+        ctx.beginPath()
+    } else {
+        document.getElementById("divAffiche").innerText = "Miss"
+        drawScene()
+    }
+}
+
+
