@@ -63,5 +63,5 @@ input, textarea {
 }
 .gradient {
   border-image: linear-gradient(45deg, #0066ff, #ff32d6);
-border-width: 3px;
+  border-width: 3px;
 }
