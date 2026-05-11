@@ -6,35 +6,29 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-<body style="background: linear-gradient(90deg,rgb(115, 255, 0) 0%, black 6%); color : white;">
-    <form>
-        <h1>Formulaire ics</h1>
-        <!-- textbox pour le nom de l'élève -->
-        <h1>entre votre parabole</h1>
-
-        <label for="a">quelle valeure de "a" choisi tu? : </label>
-        <input type="text" id="a">
-
-        <br>
-
-        <label for="b" >quelle valeure de "b" choisi tu? : </label>
-        <input type="text" id="b">
-
-        <br>
-
-        <label for="c" >quelle valeure de "c" choisi tu? : </label>
-        <input type="text" id="c">
-
-        <br>
-
-        <input type="button" id="btnSoumet" onclick="genereParabole()" class="shade" value="Soumettre">
-        <!-- Création d'une section pour l'affichage des résultats -->
-        <div id="divAffiche"></div>
-        <input type="reset" id="init" onclick="nouvelleparabole()" value="Parabole différente" class="shade" >
-        <div id="Ereure"
-    </form>
+<body style="background: linear-gradient(90deg,rgb(228, 57, 44) 0%, black 6%); color : white;">
     <center>
-        <canvas id="myCanvas" width="1000" height="400" style="border:1px solid rgb(138, 7, 7)"></canvas>
+        <canvas id="myCanvas" width="1500" height="650" style="border:1px solid rgb(138, 7, 7)"></canvas>
+        <form>
+            <br>
+            <h1>Entrer votre parabole</h1>
+            <!-- textbox pour le nom de l'élève -->
+            <div id="divformule"></div>
+            <p style="font-size: 30px;">
+                Y=
+                <input type="text" id="a" value="A" class="abc">
+                X^2+
+                <input type="text" id="b" value="B" class="abc">
+                X+
+                <input type="text" id="c" value="C" class="abc">
+                <input type="button" id="btnSoumet" onclick="lancer()" value="TIRER" class="tir">
+            </p>
+            
+            <!-- Création d'une section pour l'affichage des résultats -->
+            <div id="divAffiche"></div>
+            <input type="reset" id="init" onclick="nouvelleparabole()" value="Prochaine ronde" class="nouveaux">
+            <div id="Ereure"></div>
+        </form>
     </center>
     <script src="game.js"></script>
 </body>
