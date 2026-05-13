@@ -210,4 +210,4 @@ drawScene()
 
 let username = document.getElementById("username-input").value
 
-
+document.getElementById("divAffiche").innerText = username
