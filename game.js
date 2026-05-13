@@ -208,6 +208,6 @@ function nouvelleparabole() {
 }
 drawScene()
 
-let username = document.getElementById("username-input").value
+let username = document.getElementById("txtusername").value
 
 document.getElementById("divAffiche").innerText = username
