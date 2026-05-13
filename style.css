@@ -55,29 +55,6 @@ body{
     letter-spacing: 3px;
     color: #aaa;
 }
-.username-row input {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
-    letter-spacing: 3px;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid rgba(255,255,255,0.3);
-    color: #fff;
-    padding: 4px 8px;
-    width: 220px;
-    transition: border-color 0.2s;
-}
-.username-row input::placeholder { color: rgba(255,255,255,0.2); }
-.username-row input:focus { border-bottom-color: #e02020; }
-#username-error {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    color: #e02020;
-    text-transform: uppercase;
-    min-height: 18px;
-    margin-bottom: 20px;
-}
 .screen{
   position:fixed;
   inset:0;
