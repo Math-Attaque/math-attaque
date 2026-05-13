@@ -36,7 +36,7 @@ body{
   letter-spacing: 5px;
   margin-bottom: 6px;
 }
-.logo .star { color: #e02020; }
+.logo .star { color: #44e0ee; }
  /*https://stackoverflow.com/questions/4151743/how-can-i-change-the-thickness-of-my-hr-tag*/
 .logo-underline {
     width: min(480px, 72vw);
