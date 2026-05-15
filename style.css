@@ -358,16 +358,5 @@ border: 1px solid rgba(255,255,255,0.25);
 padding: 9px 22px;
 text-decoration: none;
 }
-.rtrn-btn {
-text-align: center;
-margin-top: 56px;
-padding-top: 28px;
-font-family: 'Bebas Neue', sans-serif;
-font-size: 15px;
-letter-spacing: 3px;
-color: #e44e4e;
-background: rgba(255,255,255,0.07);
-border: 1px solid rgba(255,255,255,0.25);
-text-decoration: none;
-}
+
 
